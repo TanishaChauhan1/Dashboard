@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Patient Dashboard</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#">Dashboard</a></li>
+                </ul>
+                <ul>
+                    <li class="current"><a href="/signup">Signup</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="dashboard">
+        <h2>Welcome, {{ user.first_name }} {{ user.last_name }}</h2>
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }}, {{ user.pincode }}</p>
+    </div>
+</body>
+</html>
