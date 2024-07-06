@@ -1,0 +1,14 @@
+/* accounts/static/accounts/css/patient_dashboard.css */
+
+/* Example CSS styles for patient dashboard */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #fff;
+    padding: 20px;
+}
+
+h2 {
+    color: #1a73e8;
+}
+
+/* Add more styles as needed */

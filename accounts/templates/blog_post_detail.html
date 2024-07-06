@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<!-- accounts/templates/blog_post_detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog_post.title }}</title>
+    <!-- Add your CSS links and other headers here -->
+</head>
+<body>
+    <header>
+        <!-- Optional header content -->
+    </header>
+
+    <main>
+        <article>
+            <h1>{{ blog_post.title }}</h1>
+            <img src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}">
+            <p>Category: {{ blog_post.category }}</p>
+            <p>Summary: {{ blog_post.summary }}</p>
+            <p>{{ blog_post.content }}</p>
+        </article>
+    </main>
+
+    <!-- Optional footer content -->
+
+    <!-- Add your JavaScript links and other scripts here -->
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% load static %}
+
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Welcome{% endblock %}</title>
+    <!-- Add your CSS links and other headers here -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'signup' %}">Home</a></li>
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_doctor %}
+                        <li><a href="{% url 'doctor_dashboard' %}">Doctor Dashboard</a></li>
+                        <!-- Add more doctor-specific links as needed -->
+                    {% else %}
+                        <li><a href="{% url 'patient_dashboard' %}">Patient Dashboard</a></li>
+                        <!-- Add more patient-specific links as needed -->
+                    {% endif %}
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Add your footer content here if needed -->
+
+    <!-- Add your JavaScript links and other scripts here -->
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-PgV34X/Em7Q5ZZ1guEiZkFZ/QKnvnTphwPphX27mG8qbB1SJw4B43DdEZl/37X0+" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+3vRMm+4v7ZKFV2ww5ES5pwKc0LsSGJ4n6W" crossorigin="anonymous"></script>
+<!-- Add additional scripts as needed -->
+</body>
+</html>

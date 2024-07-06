@@ -1,8 +1,10 @@
 from django.urls import path
-from .views import signup, patient_dashboard, doctor_dashboard
+from . import views
+
 
 urlpatterns = [
-    path('signup/', signup, name='signup'),
-    path('patient_dashboard/', patient_dashboard, name='patient_dashboard'),
-    path('doctor_dashboard/', doctor_dashboard, name='doctor_dashboard'),
+    path('signup/', views.signup, name='signup'),
+    path('patient_dashboard/', views.patient_dashboard, name='patient_dashboard'),
+    path('doctor_dashboard/', views.doctor_dashboard, name='doctor_dashboard'),
+    path('blog/<int:pk>/', views.blog_post_detail, name='blog_post_detail'),
 ]
